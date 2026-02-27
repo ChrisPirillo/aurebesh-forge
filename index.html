@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en"><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1CQ4D3VQ3L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1CQ4D3VQ3L');
+  </script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+
+<title>Aurebesh Forge: 3D-Printable Star Wars Sign Maker</title>
+
+<meta name="description" content="Create and export custom 3D-printable nameplates using Star Wars Aurebesh script. Adjust geometry and styles for perfect 3D prints.">
+<meta name="keywords" content="Aurebesh, 3D Printing, STL Export, Star Wars, Nameplate Generator, Custom Sign, Three.js, CAD Tool">
+<meta name="author" content="Chris Pirillo">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f172a">
+
+<meta property="og:site_name" content="Chris Pirillo's Arcade">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aurebesh Forge: 3D-Printable Star Wars Sign Maker">
+<meta property="og:description" content="Create and export custom 3D-printable nameplates using Star Wars Aurebesh script. Adjust geometry and styles for perfect 3D prints.">
+<meta property="og:url" content="https://pirillo.com/arcade/aurebesh-forge.html">
+<meta property="og:image" content="https://pirillo.com/arcade/images/aurebesh-forge.png">
+<meta property="og:image:alt" content="Aurebesh Forge: 3D-Printable Star Wars Sign Maker">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ChrisPirillo">
+<meta name="twitter:creator" content="@ChrisPirillo">
+<meta name="twitter:title" content="Aurebesh Forge: 3D-Printable Star Wars Sign Maker">
+<meta name="twitter:description" content="Create and export custom 3D-printable nameplates using Star Wars Aurebesh script. Adjust geometry and styles for perfect 3D prints.">
+<meta name="twitter:image" content="https://pirillo.com/arcade/images/aurebesh-forge.png">
+<meta name="twitter:domain" content="pirillo.com">
+
+<link rel="canonical" href="https://pirillo.com/arcade/aurebesh-forge.html">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Aurebesh Forge: 3D-Printable Star Wars Sign Maker",
+  "description": "Create and export custom 3D-printable nameplates using Star Wars Aurebesh script. Adjust geometry and styles for perfect 3D prints.",
+  "keywords": "Aurebesh, 3D Printing, STL Export, Star Wars, Nameplate Generator, Custom Sign, Three.js, CAD Tool",
+  "url": "https://pirillo.com/arcade/aurebesh-forge.html",
+  "image": "https://pirillo.com/arcade/images/aurebesh-forge.png",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://pirillo.com/arcade/images/aurebesh-forge.png"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Chris Pirillo",
+    "url": "https://pirillo.com",
+    "sameAs": [
+      "https://x.com/ChrisPirillo"
+    ]
+  },
+  "mainEntity": {
+    "name": "Aurebesh Forge: 3D-Printable Star Wars Sign Maker",
+    "description": "Create and export custom 3D-printable nameplates using Star Wars Aurebesh script. Adjust geometry and styles for perfect 3D prints.",
+    "image": "https://pirillo.com/arcade/images/aurebesh-forge.png",
+    "operatingSystem": "Web Browser",
+    "author": {
+      "@type": "Person",
+      "name": "Chris Pirillo"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "3D Modeling Utility"
+  }
+}</script>
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap">
+<style>:root{--bg:#08090d;--p:#0f1118;--c:#161822;--i:#1c1f2e;--bd:#262a3a;--ac:#4a7cff;--ag:rgba(74,124,255,.15);--ab:#6b9aff;--t:#b8bfcc;--td:#5c6370;--tb:#e2e6ef}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--t)}
+#ldo{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .5s}
+.lsx{width:60px;height:60px;background:var(--ac);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);animation:lrot 2s infinite ease-in-out}
+@keyframes lrot{0%{transform:rotate(0) scale(1)}
+50%{transform:rotate(180deg) scale(1.2)}
+100%{transform:rotate(360deg) scale(1)}
+}
+.app{display:flex;flex-direction:column;height:100%}
+.hdr{height:52px;min-height:52px;background:var(--p);border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:20}
+.logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:12px;color:var(--tb);letter-spacing:1px;display:flex;align-items:center;gap:6px}
+.lhx{width:20px;height:20px;background:var(--ac);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%)}
+.h-q{width:24px;height:24px;border-radius:50%;border:1px solid var(--td);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold;color:var(--td);cursor:pointer;margin-left:4px;transition:all 0.2s}
+.h-q:hover{border-color:var(--ac);color:var(--ac)}
+.btn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:12px;padding:0 10px;height:32px;border:1px solid var(--bd);border-radius:8px;background:var(--i);color:var(--t);cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.btn:active{transform:scale(.96)}
+.bgo{background:var(--ac);border-color:var(--ac);color:#fff}
+.hr{display:flex;gap:4px;align-items:center}
+.prev{background:var(--c);border-bottom:1px solid var(--bd);padding:8px 12px;display:flex;flex-direction:column;gap:6px}
+.prev textarea{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:600;padding:10px 14px;background:var(--i);border:1px solid var(--bd);border-radius:10px;color:var(--tb);outline:none;width:100%;resize:none;height:60px}
+.prev textarea:focus{border-color:var(--ac)}
+.vw{flex:1;position:relative;min-height:0;background:var(--bg);overflow:hidden}
+.vw canvas{position:absolute;top:0;left:0;display:block;touch-action:none}
+.vs{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;color:var(--ac);background:var(--p);border:1px solid var(--bd);border-radius:6px;height:28px;display:flex;align-items:center;padding:0 8px;pointer-events:none;z-index:5}
+.vb{position:absolute;top:10px;left:50%;transform:translateX(-50%);display:flex;gap:2px;background:var(--p);border:1px solid var(--bd);border-radius:8px;padding:3px;z-index:5}
+.vb .btn{padding:0 8px;font-size:10px;border:none;height:24px;background:transparent}
+.vb .btn:hover{background:var(--i)}
+.mn{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.cp{background:var(--p);border-top:1px solid var(--bd);max-height:42vh;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px;display:flex;flex-direction:column;gap:16px}
+.sec-t{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--td);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--bd)}
+.cr{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.cl{font-size:11px;font-weight:600;color:var(--td);min-width:85px;flex-shrink:0}
+.cs{flex:1;display:flex;align-items:center;gap:8px}
+.cs input[type=range]{flex:1;-webkit-appearance:none;height:5px;background:var(--bd);border-radius:3px;outline:none}
+.cs input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:var(--ac);border-radius:50%;cursor:pointer;border:3px solid var(--bg);box-shadow:0 0 5px rgba(0,0,0,0.3)}
+.cv{font-size:12px;font-weight:700;color:var(--ab);min-width:30px;text-align:right}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:6px 0}
+.sb{aspect-ratio:1.2;border:2px solid var(--bd);border-radius:8px;background:var(--i);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.sb:active{transform:scale(.95)}
+.sb.a{border-color:var(--ac);background:var(--ag)}
+.sb svg{width:50%;height:auto}
+.sb span{font-size:7px;font-weight:700;color:var(--td);text-transform:uppercase}
+.tg{display:flex;align-items:center;gap:8px;cursor:pointer;margin:2px 0;padding:4px 0}
+.tg input{width:20px;height:20px;accent-color:var(--ac)}
+.tg span{font-size:12px;font-weight:600}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:2000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.modal-c{background:var(--p);border:1px solid var(--bd);border-radius:16px;padding:20px;max-width:360px;width:90%;display:flex;flex-direction:column;gap:14px;position:relative}
+.modal-c h2{font-family:'Orbitron',sans-serif;font-size:14px;color:var(--ac);letter-spacing:1px}
+.modal-c p{font-size:13px;color:var(--t);line-height:1.4}
+.modal-l{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.modal-l a{color:var(--ab);text-decoration:none;font-weight:600;font-size:12px;padding:10px;background:var(--i);border:1px solid var(--bd);border-radius:8px;text-align:center;transition:all 0.2s}
+.modal-l a:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media(min-width:800px){ .app{display:grid;grid-template-columns:1fr 360px;grid-template-rows:52px 1fr;height:100vh}
+.hdr{grid-column:1/-1}
+.logo{font-size:13px;letter-spacing:1.5px}
+.lhx{width:24px;height:24px}
+.btn{font-size:13px;padding:0 14px}
+.mn{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.vw{flex:1;min-height:0}
+.cp{border-top:none;border-left:1px solid var(--bd);max-height:none;overflow-y:auto;padding:16px;gap:20px}
+.prev{padding:12px}
+.prev textarea{height:70px}
+.sb{aspect-ratio:1.4}
+.sb span{font-size:8px}
+.cl{font-size:12px;min-width:95px}
+.cv{font-size:13px;min-width:32px}
+.vs{font-size:11px;height:32px;padding:0 10px}
+.vb .btn{font-size:11px}
+}
+@media(max-width:400px){
+.logo span{display:none}
+.btn{padding:0 8px;font-size:11px}
+.hr{gap:2px}
+}</style>
+</head><body><h1 style="display: none;">Aurebesh Forge: 3D-Printable Star Wars Sign Maker</h1>
+<div id="ldo"><div class="lsx"></div><div style="font-family:Orbitron;font-size:10px;letter-spacing:2px">SYNCING HOLONET DATA...</div></div>
+<div id="infoModal" class="modal" onclick="closeModal()">
+  <div class="modal-c" onclick="event.stopPropagation()">
+    <h2>AUREBESH FORGE</h2>
+    <p>Forge custom 3D-printable nameplates and signs. Adjust geometry and styles in real-time, then export as an STL or multi-color 3MF file.</p>
+    <div class="modal-l">
+      <a href="https://arcade.pirillo.com/" target="_blank">More of My Apps</a>
+      <a href="https://chris.pirillo.com/" target="_blank">Follow Chris Pirillo</a>
+      <a href="https://ctrlaltcreate.live/" target="_blank">Learn How to Make Apps</a>
+      <a href="https://www.paypal.com/donate/?hosted_button_id=UMWCDWGVXVHZU" target="_blank">Donate to Me Here</a>
+      <a href="https://patreon.com/ChrisPirillo" target="_blank">Support My Patreon</a>
+    </div>
+  </div>
+</div>
+<div class="app">
+<div class="hdr">
+  <div style="display:flex;align-items:center">
+    <div class="logo"><div class="lhx"></div>AUREBESH <span>FORGE</span></div>
+    <div class="h-q" onclick="openModal()">?</div>
+  </div>
+  <div class="hr">
+    <a href="https://twitch.tv/MakerDeck" target="_blank" class="btn">⇥ MakerDeck</a>
+    <button class="btn bgo" style="margin-right:4px" onclick="exportSTL()">⬇ STL</button>
+    <button class="btn bgo" style="background:linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color:#020617" onclick="export3MF()">⬇ 3MF</button>
+  </div>
+</div>
+<div class="mn">
+<div class="prev"><textarea id="ti" maxlength="150" placeholder="Enter text (multiple lines allowed)..." oninput="scheduleRebuild()">AUREBESH
+FORGE</textarea></div>
+<div class="vw" id="vp">
+<div class="vb"><button class="btn" onclick="setV('f')">FRONT</button><button class="btn" onclick="setV('t')">TOP</button><button class="btn" onclick="setV('q')">3/4</button><button class="btn" onclick="setV('s')">SIDE</button></div>
+<div class="vs" id="st">—</div>
+</div></div>
+<div class="cp">
+<div class="sec-t">Content &amp; Glyph</div>
+<div class="cr"><span class="cl">Height</span><div class="cs"><input type="range" id="lH" min=".5" max="8" step=".25" value="2.5" oninput="scheduleRebuild()"><span class="cv" data-f="lH">2.5</span></div></div>
+<div class="cr"><span class="cl">Max Glyph</span><div class="cs"><input type="range" id="lS" min="4" max="66" step=".5" value="12" oninput="scheduleRebuild()"><span class="cv" data-f="lS">12</span></div></div>
+<div class="cr"><span class="cl">Glyph Scale</span><div class="cs"><input type="range" id="lSc" min="0.1" max="5" step="0.05" value="1" oninput="scheduleRebuild()"><span class="cv" data-f="lSc">1</span></div></div>
+<div class="cr"><span class="cl">Kerning</span><div class="cs"><input type="range" id="lP" min="-2" max="6" step=".25" value="0" oninput="scheduleRebuild()"><span class="cv" data-f="lP">0</span></div></div>
+<div class="cr"><span class="cl">Vert Shift</span><div class="cs"><input type="range" id="vSh" min="-40" max="40" step=".5" value="0" oninput="scheduleRebuild()"><span class="cv" data-f="vSh">0</span></div></div>
+
+<div class="sec-t">Base Geometry</div>
+<div class="sg" id="shG"></div>
+<div class="cr"><span class="cl">Min Length</span><div class="cs"><input type="range" id="bW" min="20" max="250" step="1" value="80" oninput="scheduleRebuild()"><span class="cv" data-f="bW">80</span></div></div>
+<div class="cr"><span class="cl">Min Depth</span><div class="cs"><input type="range" id="bD" min="8" max="150" step="1" value="20" oninput="scheduleRebuild()"><span class="cv" data-f="bD">20</span></div></div>
+<div class="cr"><span class="cl">Thickness</span><div class="cs"><input type="range" id="bT" min="1" max="12" step=".5" value="3" oninput="scheduleRebuild()"><span class="cv" data-f="bT">3</span></div></div>
+<div class="cr"><span class="cl">Padding</span><div class="cs"><input type="range" id="bP" min="1" max="15" step=".5" value="5" oninput="scheduleRebuild()"><span class="cv" data-f="bP">5</span></div></div>
+
+<div class="sec-t">Edge &amp; Style</div>
+<div class="cr"><span class="cl">Corners</span><div class="cs"><input type="range" id="cR" min="0" max="15" step=".5" value="2" oninput="scheduleRebuild()"><span class="cv" data-f="cR">2</span></div></div>
+<div class="cr"><span class="cl">Taper Angle</span><div class="cs"><input type="range" id="eT" min="0" max="30" step="1" value="0" oninput="scheduleRebuild()"><span class="cv" data-f="eT">0°</span></div></div>
+<div class="cr"><span class="cl">Base Bevel</span><div class="cs"><input type="range" id="bv" min="0" max="4" step=".25" value=".75" oninput="scheduleRebuild()"><span class="cv" data-f="bv">0.75</span></div></div>
+
+<div class="sec-t">Border Details</div>
+<div class="tg" onclick="this.querySelector('input').click()"><input type="checkbox" id="aB" onchange="scheduleRebuild()" onclick="event.stopPropagation()"><span>Raised border</span></div>
+<div class="cr"><span class="cl">Border Width</span><div class="cs"><input type="range" id="rW" min=".5" max="4" step=".25" value="1.5" oninput="scheduleRebuild()"><span class="cv" data-f="rW">1.5</span></div></div>
+<div class="cr"><span class="cl">Border Height</span><div class="cs"><input type="range" id="rH" min=".5" max="4" step=".25" value="1" oninput="scheduleRebuild()"><span class="cv" data-f="rH">1</span></div></div>
+</div></div>
+<canvas id="fc" style="display:none"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/BufferGeometryUtils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/SVGLoader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+var ABFONT='AurebeshForge',fontOK=false,scene,camera,renderer,grp,rbt=null,orb,tgt,mode=0,pxy=[0,0],firstLoad=true,dl;
+const BACK_SVG_PATH = "M25.45 54.25L25.55 60.65Q24.65 60.80 23.65 60.90Q22.65 61 21.35 61Q15.20 61 11.08 59.90Q6.95 58.80 4.53 56.42Q2.10 54.05 1.05 50.23Q0 46.40 0 40.95Q0 35.10 1.08 30.97Q2.15 26.85 4.70 24.32Q7.25 21.80 11.63 20.63Q16 19.45 22.60 19.45Q29.55 19.45 34.02 20.63Q38.50 21.80 41 24.32Q43.50 26.85 44.50 30.97Q45.50 35.10 45.50 40.95Q45.50 45.40 45.18 48.38Q44.85 51.35 43.90 53.10Q42.95 54.85 41.08 55.60Q39.20 56.35 36.05 56.35Q31.90 56.35 29.77 55.10Q27.65 53.85 27.10 50.75L26.90 49.65L26.80 49.65Q25.90 50.80 24.13 51.48Q22.35 52.15 19.60 52.15Q11.90 52.15 11.90 44.60Q11.90 41.40 13.90 39.63Q15.90 37.85 20.25 37.85L26.75 37.85Q26.45 36.10 25.15 35.52Q23.85 34.95 20.80 34.95Q18.80 34.95 17 35.20Q15.20 35.45 13.70 35.85L13.55 35.75L13.55 30.10Q14.90 29.65 17.15 29.32Q19.40 29 21.40 29Q25.50 29 28.05 29.95Q30.60 30.90 31.83 33.50Q33.05 36.10 33.20 41.10Q33.30 44.30 33.35 46.23Q33.40 48.15 33.60 49.13Q33.80 50.10 34.30 50.42Q34.80 50.75 35.85 50.75Q37.25 50.75 37.78 50Q38.30 49.25 38.40 47.15Q38.50 45.05 38.50 41.10Q38.50 36.55 38 33.60Q37.50 30.65 35.93 28.97Q34.35 27.30 31.18 26.63Q28 25.95 22.60 25.95Q17.40 25.95 14.30 26.63Q11.20 27.30 9.63 28.97Q8.05 30.65 7.53 33.55Q7 36.45 7 40.95Q7 45 7.50 47.63Q8 50.25 9.45 51.75Q10.90 53.25 13.78 53.88Q16.65 54.50 21.40 54.50Q22.60 54.50 23.60 54.45Q24.60 54.40 25.40 54.20L25.45 54.25M21.35 46.60Q26.85 46.60 26.90 43.65L26.90 42.60L21.85 42.60Q19.90 42.60 19.15 43.13Q18.40 43.65 18.40 44.60Q18.40 45.75 19.18 46.17Q19.95 46.60 21.35 46.60ZM65.05 50.45Q64.20 47.75 63.33 44.70Q62.45 41.65 61.60 38.65Q60.75 35.65 60.05 33.05Q59.35 30.45 58.85 28.55Q58.35 26.65 58.15 25.85L57.95 25.90Q58.10 26.80 58.20 28.27Q58.30 29.75 58.35 31.38Q58.40 33 58.40 34.35L58.40 52.05L50.75 52.05L50.75 20.40L64.15 20.40Q64.85 23.05 65.63 25.97Q66.40 28.90 67.18 31.77Q67.95 34.65 68.55 37.23Q69.15 39.80 69.40 41.70L69.50 41.70Q69.75 39.80 70.33 37.25Q70.90 34.70 71.65 31.80Q72.40 28.90 73.20 25.97Q74 23.05 74.65 20.40L87.85 20.40L87.85 52.05L80.30 52.05L80.30 34.35Q80.30 33 80.35 31.38Q80.40 29.75 80.53 28.27Q80.65 26.80 80.75 25.90L80.55 25.85Q80.35 26.65 79.85 28.55Q79.35 30.45 78.63 33.08Q77.90 35.70 77.05 38.70Q76.20 41.70 75.33 44.73Q74.45 47.75 73.65 50.45L65.05 50.45ZM103.25 27.45Q108.05 27.45 111 28.45Q113.95 29.45 115.33 32.13Q116.70 34.80 116.70 39.85L116.70 52.05L109.45 52.05L109.20 49.75L109.05 49.75Q108.10 51 106.10 51.75Q104.10 52.50 100.90 52.50Q92.25 52.50 92.25 44.40Q92.25 40.95 94.53 38.98Q96.80 37 101.70 37L109.10 37Q108.75 34.90 107.30 34.17Q105.85 33.45 102.35 33.45Q100.15 33.45 98.03 33.77Q95.90 34.10 94.30 34.50L94.15 34.40L94.20 28.60Q95.20 28.30 96.75 28.02Q98.30 27.75 100.03 27.60Q101.75 27.45 103.25 27.45M102.95 46.60Q106.05 46.60 107.60 45.83Q109.15 45.05 109.20 43.35L109.20 42.10L103.55 42.10Q101.35 42.10 100.47 42.73Q99.60 43.35 99.60 44.40Q99.60 45.65 100.50 46.13Q101.40 46.60 102.95 46.60ZM129.95 52.05L121.95 52.05L121.95 18.40L129.95 18.40L129.95 38L130.05 38L136.35 27.70L145.15 27.70L145.15 27.90L137.75 39.40L137.75 39.60L146.35 52.05L137.15 52.05L130.10 40.80L129.95 40.75L129.95 52.05ZM170.25 51.25Q168.85 51.75 166.38 52.13Q163.90 52.50 160.50 52.50Q156.20 52.50 153.18 51.38Q150.15 50.25 148.60 47.52Q147.05 44.80 147.05 39.95Q147.05 33.35 150.08 30.40Q153.10 27.45 159.45 27.45Q164 27.45 166.63 28.75Q169.25 30.05 170.38 32.42Q171.50 34.80 171.50 38.05Q171.50 39 171.43 40.10Q171.35 41.20 171.15 42.25L170.95 42.45L154.50 42.45Q154.85 44.65 156.58 45.35Q158.30 46.05 162.20 46.05Q164.80 46.05 166.53 45.92Q168.25 45.80 170.05 45.55L170.25 45.70L170.25 51.25M164.55 37.20Q164.55 36 164.18 35.13Q163.80 34.25 162.70 33.77Q161.60 33.30 159.45 33.30Q156.30 33.30 155.33 34.38Q154.35 34.38 154.35 37.20L164.55 37.20ZM183.75 52.05L175.75 52.05L175.75 27.70L182.25 27.70L182.90 32.70L183.05 32.70Q183.50 29.90 185.20 28.67Q186.90 27.45 190.25 27.45Q191.60 27.45 192.70 27.57Q193.80 27.70 194.55 27.80L194.55 35.60L194.45 35.70Q193.65 35.50 192.63 35.35Q191.60 35.20 190.30 35.20Q188.45 35.20 186.97 35.80Q185.50 36.40 184.68 38.13Q183.85 39.85 183.85 43.25L183.85 43.25L183.75 52.05ZM198.05 52.05L198.05 20.40L211.90 20.40Q216.05 20.40 218.85 21.07Q221.65 21.75 223.35 23.45Q225.05 25.15 225.80 28.17Q226.55 31.20 226.55 35.95Q226.55 40.90 225.80 44.05Q225.05 47.20 223.35 48.95Q221.65 50.70 218.85 51.38Q216.05 52.05L211.90 52.05M210.75 27.15L206.05 27.15L206.05 45.30L210.75 45.30Q213.65 45.30 215.33 44.65Q217 44 217.73 42Q218.45 40 218.45 35.95Q218.45 32.10 217.73 30.22Q217 28.35 215.33 27.75Q213.65 27.15 210.75 27.15ZM253 51.25Q251.60 51.75 249.13 52.13Q246.65 52.50 243.25 52.50Q238.95 52.50 235.93 51.38Q232.90 50.25 231.35 47.52Q229.80 44.80 229.80 39.95Q229.80 33.35 232.83 30.40Q235.85 27.45 242.20 27.45Q246.75 27.45 249.38 28.75Q252 30.05 253.13 32.42Q254.25 34.80 254.25 38.05Q254.25 39 254.18 40.10Q254.10 41.20 253.90 42.25L253.70 42.45L237.25 42.45Q237.60 44.65 239.33 45.35Q241.05 46.05 244.95 46.05Q247.55 46.05 249.28 45.92Q251 45.80 252.80 45.55L253 45.70L253 51.25M247.30 37.20Q247.30 36 246.93 35.13Q246.55 34.25 245.45 33.77Q244.35 33.30 242.20 33.30Q239.05 33.30 238.08 34.38Q237.10 35.45 237.10 37.20L247.30 37.20ZM277.45 45L277.45 51.50Q276.20 52 273.75 52.25Q271.30 52.50 268.55 52.50Q264.60 52.50 261.98 51.40Q259.35 50.30 258.07 47.60Q256.80 44.90 256.75 40.10Q256.75 35.15 258.13 32.40Q259.50 29.65 262.15 28.55Q264.80 27.45 268.50 27.45Q270.70 27.45 273.15 27.75Q275.60 28.05 277.15 28.55L277.20 35.25L277.05 35.35Q275.55 35.05 273.85 34.90Q272.15 34.75 270.50 34.75Q267.15 34.75 265.85 36Q264.55 37.25 264.55 40.20Q264.55 42.45 265.10 43.55Q265.65 44.65 266.95 45Q268.25 45.35 270.50 45.35Q272.25 45.35 273.85 45.20Q275.45 45.05 277.25 44.85L277.45 45ZM289.95 52.05L281.95 52.05L281.95 18.40L289.95 18.40L289.95 38L290.05 38L296.35 27.70L305.15 27.70L305.15 27.90L297.75 39.40L297.75 39.60L306.35 52.05L297.15 52.05L290.10 40.80L289.95 40.75L289.95 52.05Z";
+
+var SHP=[
+{id:'rect',l:'Rect',s:'<rect x="3" y="5" width="34" height="14" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1},
+{id:'round',l:'Round',s:'<rect x="3" y="5" width="34" height="14" rx="5" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1},
+{id:'pill',l:'Pill',s:'<rect x="3" y="5" width="34" height="14" rx="7" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1},
+{id:'chamf',l:'Chamfer',s:'<polygon points="8,5 32,5 37,9 37,15 32,19 8,19 3,15 3,9" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.2},
+{id:'oval',l:'Oval',s:'<ellipse cx="20" cy="12" rx="17" ry="7" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.45},
+{id:'hex',l:'Hex',s:'<polygon points="10,4 30,4 38,12 30,20 10,20 2,12" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.15},
+{id:'oct',l:'Octagon',s:'<polygon points="12,4 28,4 37,9 37,15 28,20 12,20 3,15 3,9" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.2},
+{id:'diam',l:'Diamond',s:'<polygon points="20,3 37,12 20,21 3,12" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.8},
+{id:'trap',l:'Trapez',s:'<polygon points="8,5 32,5 38,19 2,19" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.2},
+{id:'shld',l:'Shield',s:'<path d="M4,4 L36,4 L36,12 Q36,21 20,22 Q4,21 4,12Z" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.4},
+{id:'badge',l:'Badge',s:'<path d="M4,5 Q20,2 36,5 L36,15 L20,22 L4,15Z" fill="none" stroke="#4a7cff" stroke-width="1.4"/>',f:1.4},
+{id:'heart',l:'Heart',s:'<path d="M20,21.5 L17,19 C12,14.5 4,11 4,6.5 C4,3 7,1 11,1 C14.5,1 18,3 20,6 C22,3 25.5,1 29,1 C33,1 36,3 36,6.5 C36,11 28,14.5 23,19 L20,21.5 Z" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.4},
+{id:'banner',l:'Banner',s:'<polygon points="2,4 38,4 34,12 38,20 2,20 6,12" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.25},
+{id:'imperial',l:'Empire',s:'<path d="M20,2 L25,7 L31,7 L33,12 L38,12 L33,12 L31,17 L25,17 L20,22 L15,17 L9,17 L7,12 L2,12 L7,12 L9,7 L15,7 Z" fill="none" stroke="#4a7cff" stroke-width="1.4"/>',f:1.6},
+{id:'republic',l:'Republic',s:'<path d="M20,4 Q38,4 38,12 Q38,20 20,20 Q2,20 2,12 Q2,4 20,4" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.4},
+{id:'cyber',l:'Cyber',s:'<polygon points="2,8 10,2 38,2 38,16 30,22 2,22" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.15},
+{id:'crest',l:'Crest',s:'<path d="M4,4 L36,4 L36,12 L20,22 L4,12 Z" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.4},
+{id:'gate',l:'Gate',s:'<path d="M6,2 L34,2 L38,6 L38,18 L34,22 L6,22 L2,18 L2,6Z" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.1},
+{id:'cog',l:'Cog',s:'<path d="M20,2 L22,6 L26,5 L28,9 L32,8 L33,12 L37,12 L33,12 L32,16 L28,15 L26,19 L22,18 L20,22 L18,18 L14,19 L12,15 L8,16 L7,12 L3,12 L7,12 L8,8 L12,9 L14,5 L18,6 Z" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.5},
+{id:'clip',l:'Clipped',s:'<path d="M8,4 L32,4 Q36,4 36,8 L36,16 Q36,20 32,20 L8,20 Q4,20 4,16 L4,8 Q4,4 8,4" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1},
+{id:'chevr',l:'Chevron',s:'<polygon points="2,4 32,4 38,12 32,20 2,20 8,12" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.25},
+{id:'notch',l:'Notched',s:'<path d="M4,4 L12,4 L12,8 L28,8 L28,4 L36,4 L36,20 L28,20 L28,16 L12,16 L12,20 L4,20Z" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1},
+{id:'gothic',l:'Gothic',s:'<path d="M20,2 Q38,2 38,12 Q38,22 20,22 Q2,22 2,12 Q2,2 20,2" fill="none" stroke="#4a7cff" stroke-width="1.4"/>',f:1.4},
+{id:'wedge',l:'Wedge',s:'<polygon points="4,4 38,8 38,16 4,20" fill="none" stroke="#4a7cff" stroke-width="1.5"/>',f:1.2}
+];
+
+async function loadFont(){
+  var urls=[['https://cdn.jsdelivr.net/gh/LogicismDev/aurebesh-discord-font/fonts/AurebeshAF-Canon.woff2','woff2'],['https://fonts.cdnfonts.com/s/64479/Aurebesh.woff','woff']];
+  for(var i=0;i<urls.length;i++){try{
+    var r=await fetch(urls[i][0]);if(!r.ok)continue;
+    var buf=await r.arrayBuffer(),bin='';
+    var bytes=new Uint8Array(buf);for(var j=0;j<bytes.length;j++)bin+=String.fromCharCode(bytes[j]);
+    var st=document.createElement('style');st.textContent='@font-face{font-family:"'+ABFONT+'";src:url(data:font/'+urls[i][1]+';base64,'+btoa(bin)+') format("'+urls[i][1]+'");font-display:block;}';
+    document.head.appendChild(st);
+    await document.fonts.load('100px "'+ABFONT+'"');
+    fontOK=true;
+    document.getElementById('ldo').style.opacity='0';
+    setTimeout(()=>document.getElementById('ldo').style.display='none',500);
+    rebuild();
+    return true;
+  }catch(e){}}
+  rebuild();return false;
+}
+
+function initThree(){
+  orb = { th: Math.PI * 0.25, ph: Math.PI / 3.2, r: 150 };
+  tgt = new THREE.Vector3(0, 5, 0);
+  scene=new THREE.Scene();scene.background=new THREE.Color(0x08090d);
+  camera=new THREE.PerspectiveCamera(35,1,.1,3000);
+  renderer=new THREE.WebGLRenderer({antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  var container = document.getElementById('vp');
+  if (container) {
+    container.insertBefore(renderer.domElement, container.firstChild);
+  }
+  scene.add(new THREE.AmbientLight(0xffffff,.7));
+  dl=new THREE.DirectionalLight(0xffffff,.95);dl.position.set(40,150,50);dl.castShadow=true;
+  dl.shadow.mapSize.set(2048,2048);dl.shadow.bias=-0.0001; 
+  scene.add(dl);
+  scene.add(new THREE.GridHelper(400,50,0x1a1d2a,0x121420)).position.y=-.1;
+  grp=new THREE.Group();scene.add(grp);setupControls();onRS();window.addEventListener('resize',onRS);
+  requestAnimationFrame(function lp(){renderer.render(scene,camera);requestAnimationFrame(lp)});
+}
+
+function onRS(){
+  var v=document.getElementById('vp');if(!v||!renderer)return;
+  camera.aspect=v.clientWidth/v.clientHeight;camera.updateProjectionMatrix();renderer.setSize(v.clientWidth,v.clientHeight);
+}
+
+function upC(){
+  camera.position.set(tgt.x+orb.r*Math.sin(orb.ph)*Math.sin(orb.th),tgt.y+orb.r*Math.cos(orb.ph),tgt.z+orb.r*Math.sin(orb.ph)*Math.cos(orb.th));
+  camera.lookAt(tgt);
+}
+
+function setupControls(){
+  var c=renderer.domElement;c.addEventListener('contextmenu',e=>e.preventDefault());
+  c.addEventListener('pointerdown',e=>{mode=(e.button===2||e.button===1)?2:1;pxy=[e.clientX,e.clientY];c.setPointerCapture(e.pointerId)});
+  c.addEventListener('pointermove',e=>{if(!mode)return;var dx=e.clientX-pxy[0],dy=e.clientY-pxy[1];
+    if(mode===1){orb.th-=dx*.007;orb.ph=Math.max(.1,Math.min(Math.PI-.1,orb.ph-dy*.007))}
+    else{var ps=orb.r*.002,cd=new THREE.Vector3();camera.getWorldDirection(cd);var ri=new THREE.Vector3().crossVectors(cd,camera.up).normalize();var up2=new THREE.Vector3().crossVectors(ri,cd).normalize();tgt.addScaledVector(ri,-dx*ps);tgt.addScaledVector(up2,dy*ps)}
+    pxy=[e.clientX,e.clientY];upC()});
+  c.addEventListener('pointerup',e=>{mode=0;c.releasePointerCapture(e.pointerId)});
+  c.addEventListener('wheel',e=>{orb.r=Math.max(10,Math.min(1000,orb.r+e.deltaY*.3));upC();e.preventDefault()},{passive:false});
+  upC();
+}
+
+/** * Optimized trace logic: Merges contiguous columns into rectangles to reduce box count.
+ * Reduces triangle count by ~70% compared to raw step-by-step box creation.
+ */
+function traceText(text,maxSz,baseW,baseD,pad,spacing,glyphScale=1){
+  var lines = text.split('\n');
+  var can=document.getElementById('fc'),ctx=can.getContext('2d',{willReadFrequently:true});
+  var rsz=320,ff=fontOK?`"${ABFONT}"`:'monospace';
+  ctx.font=rsz+'px '+ff;
+  var totalRawH = lines.length * rsz * 1.2;
+  var lineMetas = lines.map(line => {
+    var chars = line.split('');
+    var charWidths = chars.map(c => ctx.measureText(c).width);
+    var lineW = charWidths.reduce((a,b)=>a+b, 0) + (chars.length-1) * (spacing*rsz*0.1);
+    return { chars, charWidths, lineW };
+  });
+  var maxLineWidth = Math.max(...lineMetas.map(m=>m.lineW));
+  var pw=Math.ceil(maxLineWidth)+400, ph=Math.ceil(totalRawH)+400;
+  can.width=pw;can.height=ph;ctx.fillStyle='#000';ctx.fillRect(0,0,pw,ph);
+  ctx.font=rsz+'px '+ff;ctx.fillStyle='#fff';ctx.textBaseline='middle';
+  var curY = 200 + (rsz*0.5);
+  lineMetas.forEach(meta => {
+    var curX = (pw - meta.lineW) / 2;
+    meta.chars.forEach((c,i) => {
+      ctx.fillText(c, curX, curY);
+      curX += meta.charWidths[i] + (spacing*rsz*0.1);
+    });
+    curY += rsz * 1.2;
+  });
+  var img=ctx.getImageData(0,0,pw,ph),px=img.data,x0=pw,x1=0,y0=ph,y1=0;
+  for(var y=0;y<ph;y++)for(var x=0;x<pw;x++)if(px[(y*pw+x)*4]>100){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}
+  if(x1<=x0||y1<=y0)return{cols:[],w:0,h:0};
+  var apw=x1-x0+1,aph=y1-y0+1;
+  var availW=baseW-pad*2,availD=baseD-pad*2;
+  var mpp = (maxSz / aph) * glyphScale; 
+  if(availD > 0 && aph * mpp > availD) mpp = availD / aph;
+  if(availW > 0 && apw * mpp > availW) mpp = availW / apw;
+  
+  var fw=apw*mpp,fh=aph*mpp,step=2,rawSegments=[];
+  for(var x=x0;x<=x1;x+=step){
+    for(var y=y0;y<=y1;y+=step){
+      if(px[(y*pw+x)*4]>100){
+        var ye=y+step;
+        while(ye<=y1&&px[(ye*pw+x)*4]>100)ye+=step;
+        rawSegments.push({x, y, h: ye-y});
+        y=ye;
+      }
+    }
+  }
+
+  // Greedy horizontal merging to minimize box count (dramatic triangle reduction)
+  var rects = [];
+  while(rawSegments.length){
+    var s = rawSegments.shift();
+    var width = step;
+    for(var nx=s.x+step; nx<=x1; nx+=step){
+      var idx = rawSegments.findIndex(rs => rs.x === nx && rs.y === s.y && rs.h === s.h);
+      if(idx > -1){
+        width += step;
+        rawSegments.splice(idx, 1);
+      } else break;
+    }
+    rects.push({
+      x: (s.x-x0)*mpp-fw/2,
+      y: (s.y-y0)*mpp-fh/2,
+      w: width*mpp,
+      h: s.h*mpp
+    });
+  }
+  return {cols:rects,w:fw,h:fh};
+}
+
+function mkB(w,d,sh,cr){
+  var hw=w/2,hd=d/2,s=new THREE.Shape();
+  if(['rect','round','pill','clip','notch','chamf'].includes(sh)){
+    if(sh==='chamf'){
+       var c=Math.min(hw,hd)*.3;
+       s.moveTo(-hw+c,hd);s.lineTo(hw-c,hd);s.lineTo(hw,hd-c);s.lineTo(hw,-hd+c);s.lineTo(hw-c,-hd);s.lineTo(-hw+c,-hd);s.lineTo(-hw,-hd+c);s.lineTo(-hw,hd-c);s.closePath();
+       return s;
+    }
+    var r=sh==='pill'?Math.min(hw,hd):sh==='round'?Math.min(hw,hd)*.4:Math.min(cr,hw*.49,hd*.49);
+    if(sh==='clip'){
+        s.moveTo(-hw+cr,hd);s.lineTo(hw-cr,hd);s.absarc(hw,hd,cr,Math.PI*.5,0,true);s.lineTo(hw,-hd+cr);s.absarc(hw,-hd,cr,0,-Math.PI*.5,true);s.lineTo(-hw+cr,-hd);s.absarc(-hw,-hd,cr,-Math.PI*.5,-Math.PI,true);s.lineTo(-hw,hd-cr);s.absarc(hw,hd,cr,-Math.PI,-Math.PI*1.5,true);s.closePath();return s;
+    }
+    if(sh==='notch'){
+        var nhw=hw*.7,nhd=hd*.7;
+        s.moveTo(-hw,hd);s.lineTo(-nhw,hd);s.lineTo(-nhw,nhd);s.lineTo(nhw,nhd);s.lineTo(nhw,hd);s.lineTo(hw,hd);s.lineTo(hw,-hd);s.lineTo(nhw,-hd);s.lineTo(nhw,-nhd);s.lineTo(-nhw,-nhd);s.lineTo(-nhw,-hd);s.lineTo(-hw,-hd);s.closePath();return s;
+    }
+    if(r>.1){s.moveTo(-hw+r,hd);s.lineTo(hw-r,hd);s.quadraticCurveTo(hw,hd,hw,hd-r);s.lineTo(hw,-hd+r);s.quadraticCurveTo(hw,-hd,hw-r,-hd);s.lineTo(-hw+r,-hd);s.quadraticCurveTo(-hw,-hd,-hw,-hd+r);s.lineTo(-hw,hd-r);s.quadraticCurveTo(-hw,hd,-hw+r,hd)}
+    else{s.moveTo(-hw,hd);s.lineTo(hw,hd);s.lineTo(hw,-hd);s.lineTo(-hw,-hd);s.closePath()}return s;}
+  var pts=[];
+  if(sh==='hex'){pts=[[-hw+hd*.5,hd],[hw-hd*.5,hd],[hw,0],[hw-hd*.5,-hd],[-hw+hd*.5,-hd],[-hw,0]]}
+  else if(sh==='shld'){s.moveTo(-hw,hd);s.lineTo(hw,hd);s.lineTo(hw,hd*0.2);s.quadraticCurveTo(hw,-hd,0,-hd);s.quadraticCurveTo(-hw,-hd,-hw,hd*0.2);s.closePath();return s}
+  else if(sh==='badge'){
+    s.moveTo(-hw, -0.4 * hd);
+    s.lineTo(0, -hd);
+    s.lineTo(hw, -0.4 * hd);
+    s.lineTo(hw, 0.4 * hd);
+    s.quadraticCurveTo(0, 1.6 * hd, -hw, 0.4 * hd);
+    s.closePath();
+    return s;
+  }
+  else if(sh==='heart'){
+    s.moveTo(0, hd * 0.4); 
+    s.bezierCurveTo(-hw * 1.1, hd * 1.1, -hw * 1.3, -hd * 0.3, 0, -hd);
+    s.bezierCurveTo(hw * 1.3, -hd * 0.3, hw * 1.1, hd * 1.1, 0, hd * 0.4);
+    return s;
+  }
+  else if(sh==='banner'){pts=[[-hw,hd],[hw,hd],[hw-hd*.4,0],[hw,-hd],[-hw,-hd],[-hw+hd*.4,0]]}
+  else if(sh==='imperial'){var n=16;for(var i=0;i<n;i++){var a=(i/n)*Math.PI*2-Math.PI/2;var r=i%2?hw:hw*.7;pts.push([Math.cos(a)*hw,Math.sin(a)*r])}}
+  else if(sh==='republic'){for(var i=0;i<=48;i++){var a=(i/48)*Math.PI*2;var sc=Math.abs(Math.cos(a))>.5?1:1.15;pts.push([Math.cos(a)*hw,Math.sin(a)*hd*sc])}}
+  else if(sh==='cyber'){pts=[[-hw,hd*.6],[-hw+hd*.4,hd],[hw,hd],[hw,-hd*.6],[hw-hd*.4,-hd],[-hw,-hd]]}
+  else if(sh==='crest'){s.moveTo(-hw,hd);s.lineTo(hw,hd);s.lineTo(hw,hd*0.2);s.lineTo(0,-hd);s.lineTo(-hw,hd*0.2);s.closePath();return s}
+  else if(sh==='gate'){pts=[[-hw+hd*.2,hd],[hw-hd*.2,hd],[hw,hd*.8],[hw,-hd*.8],[hw-hd*.2,-hd],[-hw+hd*.2,-hd],[-hw,-hd*.8],[-hw,hd*.8]]}
+  else if(sh==='cog'){var n=24;for(var i=0;i<n;i++){var a=(i/n)*Math.PI*2;var r=i%3===0?hw:hw*.8;pts.push([Math.cos(a)*r,Math.sin(a)*r])}}
+  else if(sh==='oval'){for(var i=0;i<=48;i++){var a=(i/48)*Math.PI*2;pts.push([Math.cos(a)*hw,Math.sin(a)*hd])}return mkPts(pts,s)}
+  else if(sh==='oct'){var o=Math.min(hw,hd)*.38;pts=[[-hw+o,hd],[hw-o,hd],[hw,hd-o],[hw,-hd+o],[hw-o,-hd],[-hw+o,-hd],[-hw,-hd+o],[-hw,hd-o]]}
+  else if(sh==='diam')pts=[[0,hd],[hw,0],[0,-hd],[-hw,0]];
+  else if(sh==='trap'){var n=hw*.2;pts=[[-hw+n,hd],[hw-n,hd],[hw,-hd],[-hw,-hd]]}
+  else if(sh==='chevr')pts=[[-hw,hd],[hw-hd*.6,hd],[hw,0],[hw-hd*.6,-hd],[-hw,-hd],[-hw+hd*.6,0]];
+  else if(sh==='gothic'){for(var i=0;i<=48;i++){var a=(i/48)*Math.PI*2;var sc=Math.abs(Math.cos(a))>.5?1:1.15;pts.push([Math.cos(a)*hw,Math.sin(a)*hd*sc])}}
+  else if(sh==='wedge')pts=[[-hw,hd],[hw,hd*.6],[hw,-hd*.6],[-hw,-hd]];
+
+  return mkPtsR(pts.length?pts:[[-hw,hd],[hw,hd],[hw,-hd],[-hw,-hd]],s,cr);
+}
+function mkPts(p,s){s.moveTo(p[0][0],p[0][1]);for(var i=1;i<p.length;i++)s.lineTo(p[i][0],p[i][1]);s.closePath();return s}
+function mkPtsR(pts,s,cr){
+  if(cr<.1)return mkPts(pts,s);var n=pts.length;
+  for(var i=0;i<n;i++){
+    var p=pts[(i-1+n)%n],c=pts[i],nx=pts[(i+1)%n],
+        d1=Math.hypot(c[0]-p[0],c[1]-p[1]),
+        d2=Math.hypot(nx[0]-c[0],nx[1]-c[1]);
+    var r=Math.min(cr,d1*.45,d2*.45);
+    var t1x=c[0]+(p[0]-c[0])/d1*r, t1y=c[1]+(p[1]-c[1])/d1*r;
+    var t2x=c[0]+(nx[0]-c[0])/d2*r, t2y=c[1]+(nx[1]-c[1])/d2*r;
+    if(i===0)s.moveTo(t1x,t1y); else s.lineTo(t1x,t1y);
+    s.quadraticCurveTo(c[0],c[1],t2x,t2y);
+  }
+  s.closePath();return s;
+}
+
+function gv(id){return parseFloat(document.getElementById(id).value)}
+
+function rebuild(){
+  if(!fontOK)return;
+  document.querySelectorAll('.cv[data-f]').forEach(el=>{var i=document.getElementById(el.dataset.f);if(i)el.textContent=el.dataset.f==='eT'?i.value+'\u00b0':i.value});
+  var text=(document.getElementById('ti').value||'').trim();
+  while(grp.children.length){var ch=grp.children[0];grp.remove(ch);if(ch.geometry)ch.geometry.dispose();if(ch.material)ch.material.dispose()}
+  if(!text){document.getElementById('st').textContent='...';return}
+  var lH=gv('lH'),lS=gv('lS'),lSc=gv('lSc'),lP=gv('lP'),bP=gv('bP'),bT=gv('bT'),cR=gv('cR'),eT=gv('eT'),bvl=gv('bv'),addBd=document.getElementById('aB').checked,brW=gv('rW'),brH=gv('rH'),vSh=gv('vSh');
+  var shObj=SHP.find(s=>s.id===(document.querySelector('.sb.a')?.dataset.sh||'rect')),sh=shObj.id;
+  var baseTop=bT+Math.min(bvl,bT*.4);
+  var taperScale=1-Math.tan(eT*Math.PI/180)*0.5;
+  var borderInset = addBd ? brW : 0;
+  var initialTraced=traceText(text,lS,2000,2000,0,lP,1);if(!initialTraced.cols.length)return;
+  var bW=Math.max((initialTraced.w + bP*2 + borderInset*2)*shObj.f, gv('bW'));
+  var bD=Math.max((initialTraced.h + bP*2 + borderInset*2)*shObj.f, gv('bD'));
+  
+  if(sh === 'heart') {
+    var maxDim = Math.max(bW, bD);
+    bW = maxDim; bD = maxDim;
+  }
+
+  var surfaceW = bW * taperScale - borderInset*2;
+  var surfaceD = bD * taperScale - borderInset*2;
+  var finalTraced=traceText(text,lS,surfaceW,surfaceD,bP,lP,lSc);
+  var bM=new THREE.MeshStandardMaterial({color:0x444d5e,roughness:.6,metalness:.1}),lM=new THREE.MeshStandardMaterial({color:0xb0c4de,roughness:.3,metalness:.2});
+  
+  try{
+    var baseLayer1Shape = mkB(bW, bD, sh, cR);
+    var logoData = new THREE.SVGLoader().parse(`<svg><path d="${BACK_SVG_PATH}"/></svg>`);
+    var logoShapesRaw = [];
+    logoData.paths.forEach(p => logoShapesRaw.push(...THREE.SVGLoader.createShapes(p)));
+    
+    let bMinX = Infinity, bMaxX = -Infinity, bMinY = Infinity, bMaxY = -Infinity;
+    logoShapesRaw.forEach(s => s.getPoints().forEach(p => {
+        if(p.x < bMinX) bMinX = p.x; if(p.x > bMaxX) bMaxX = p.x;
+        if(p.y < bMinY) bMinY = p.y; if(p.y > bMaxY) bMaxY = p.y;
+    }));
+    const bMidX = (bMinX + bMaxX) / 2, bMidY = (bMinY + bMaxY) / 2;
+    const bScale = (80 * (bW / 200)) / 306; 
+
+    var baseGeos = [];
+    logoShapesRaw.forEach(ps => {
+        const convert = (p) => new THREE.Vector2(-((p.x - bMidX) * bScale), -((p.y - bMidY) * bScale));
+        const outer = new THREE.Path(ps.getPoints().map(convert));
+        baseLayer1Shape.holes.push(outer);
+        
+        if (ps.holes) {
+            ps.holes.forEach(hp => {
+                const hShape = new THREE.Shape(hp.getPoints().map(convert));
+                const hGeo = new THREE.ExtrudeGeometry(hShape, { depth: 1, bevelEnabled: false, curveSegments: 24 });
+                baseGeos.push(hGeo);
+            });
+        }
+    });
+
+    var bg1=new THREE.ExtrudeGeometry(baseLayer1Shape,{steps:1,depth:1,bevelEnabled:false,curveSegments:64});
+    baseGeos.push(bg1);
+    
+    var bg2_raw=new THREE.ExtrudeGeometry(mkB(bW,bD,sh,cR),{steps:1,depth:bT-1,bevelEnabled:bvl>.05,bevelThickness:Math.min(bvl,bT*.4),bevelSize:Math.min(bvl,2),bevelSegments:2,curveSegments:64});
+    bg2_raw.translate(0,0,1);
+    baseGeos.push(bg2_raw);
+    
+    var bg = THREE.BufferGeometryUtils.mergeBufferGeometries(baseGeos);
+    bg = THREE.BufferGeometryUtils.mergeVertices(bg, 0.001); 
+    
+    if(eT>0){var tf=Math.tan(eT*Math.PI/180)*.5,pos=bg.attributes.position;for(var i=0;i<pos.count;i++){var z=pos.getZ(i),sc=1-Math.max(0,z/(bT+bvl))*tf;pos.setX(i,pos.getX(i)*sc);pos.setY(i,pos.getY(i)*sc)}pos.needsUpdate=true}
+    bg.rotateX(-Math.PI/2);bg.computeVertexNormals();
+    var bm=new THREE.Mesh(bg,bM);bm.castShadow=bm.receiveShadow=true;bm.name="PlaqueBody";grp.add(bm);
+  }catch(e){}
+  
+  if(addBd&&brW>0){try{
+    var o=mkB(bW*taperScale,bD*taperScale,sh,cR*taperScale);o.holes.push(mkB(bW*taperScale-brW*2,bD*taperScale-brW*2,sh,Math.max(0,cR*taperScale-brW)));
+    var bgBorder=new THREE.ExtrudeGeometry(o,{steps:1,depth:brH,bevelEnabled:false,curveSegments:64});bgBorder.rotateX(-Math.PI/2);bgBorder.translate(0,baseTop,0);
+    var brm=new THREE.Mesh(bgBorder,bM);brm.castShadow=brm.receiveShadow=true;brm.name="PlaqueBody";grp.add(brm);
+  }catch(e){}}
+  
+  var yOff = ((sh === 'shld' || sh === 'crest') ? -bD * 0.08 : (sh === 'heart' ? bD * 0.12 : 0)) + vSh;
+  var letterGeos = [];
+  for(var i=0;i<finalTraced.cols.length;i++){
+    var c=finalTraced.cols[i],bx=new THREE.BoxGeometry(c.w,lH,c.h);
+    bx.translate(c.x+c.w/2,baseTop+lH/2,c.y+c.h/2 + yOff);
+    letterGeos.push(bx);
+  }
+  if(letterGeos.length){
+    var mergedLetters = THREE.BufferGeometryUtils.mergeBufferGeometries(letterGeos);
+    mergedLetters = THREE.BufferGeometryUtils.mergeVertices(mergedLetters, 0.001);
+    var lm=new THREE.Mesh(mergedLetters,lM);lm.castShadow=lm.receiveShadow=true;lm.name="PlaqueContent";grp.add(lm);
+  }
+  document.getElementById('st').textContent=Math.round(bW)+'\u00d7'+Math.round(bD)+'\u00d7'+(baseTop+lH).toFixed(1)+'mm';
+  var sz=Math.max(bW,bD)*1.2;dl.shadow.camera.left=-sz/2;dl.shadow.camera.right=sz/2;dl.shadow.camera.top=sz/2;dl.shadow.camera.bottom=-sz/2;dl.shadow.camera.updateProjectionMatrix();
+  tgt.set(0,(baseTop+lH)/2,0);if(firstLoad){orb.r=Math.max(bW*1.5,120);firstLoad=false;upC()}
+}
+
+function getSanitizedName() {
+    var txt = document.getElementById('ti').value.trim().replace(/\n/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+    return 'aurebesh_' + (txt || 'forge');
+}
+
+function buildSTL(meshes, name) {
+    let data = `solid ${name}\n`;
+    meshes.forEach(m => {
+        let g = m.geometry;
+        if (g.index) g = g.toNonIndexed();
+        g = g.clone();
+        m.updateMatrixWorld(true);
+        g.applyMatrix4(m.matrixWorld);
+        const p = g.attributes.position;
+        for(let i = 0; i < p.count; i += 3) {
+            const v1 = {x: p.getX(i), y: -p.getZ(i), z: p.getY(i)};
+            const v2 = {x: p.getX(i+1), y: -p.getZ(i+1), z: p.getY(i+1)};
+            const v3 = {x: p.getX(i+2), y: -p.getZ(i+2), z: p.getY(i+2)};
+            const ax = v2.x - v1.x, ay = v2.y - v1.y, az = v2.z - v1.z;
+            const bx = v3.x - v1.x, by = v3.y - v1.y, bz = v3.z - v1.z;
+            let nx = ay*bz - az*by, ny = az*bx - ax*bz, nz = ax*by - ay*bx;
+            const len = Math.sqrt(nx*nx + ny*ny + nz*nz);
+            if(len > 0) { nx/=len; ny/=len; nz/=len; }
+            data += `facet normal ${nx} ${ny} ${nz}\n outer loop\n vertex ${v1.x} ${v1.y} ${v1.z}\n vertex ${v2.x} ${v2.y} ${v2.z}\n vertex ${v3.x} ${v3.y} ${v3.z}\n endloop\nendfacet\n`;
+        }
+    });
+    data += `endsolid ${name}\n`;
+    return data;
+}
+
+function exportSTL() {
+    const signMeshes = [];
+    grp.updateMatrixWorld(true);
+    grp.traverse(c => { if(c.isMesh) signMeshes.push(c); });
+    if(!signMeshes.length) return;
+    const stlData = buildSTL(signMeshes, getSanitizedName());
+    const blob = new Blob([stlData], {type: 'text/plain'});
+    const url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url;
+    a.download = `${getSanitizedName()}.stl`; a.click();
+}
+
+async function export3MF() {
+    if (typeof JSZip === 'undefined') return;
+    const zip = new JSZip();
+
+    // Multi-color 3MF export: two separate build items in one file.
+    // Bambu Studio will prompt "Multi part object detected" — user clicks YES
+    // to merge as one object with parts, then assigns filaments per part.
+
+    const extractGeo = (mesh) => {
+        let geo = mesh.geometry.clone();
+        if (geo.index) geo = geo.toNonIndexed();
+        mesh.updateMatrixWorld(true);
+        geo.applyMatrix4(mesh.matrixWorld);
+        const pos = geo.attributes.position;
+        const vMap = new Map();
+        const verts = [];
+        const tris = [];
+        for (let i = 0; i < pos.count; i += 3) {
+            const idx = [];
+            for (let j = 0; j < 3; j++) {
+                const vx = pos.getX(i+j), vy = pos.getY(i+j), vz = pos.getZ(i+j);
+                const ox = vx, oy = -vz, oz = vy;
+                const key = ox.toFixed(4) + ',' + oy.toFixed(4) + ',' + oz.toFixed(4);
+                if (!vMap.has(key)) {
+                    vMap.set(key, verts.length);
+                    verts.push({x: ox, y: oy, z: oz});
+                }
+                idx.push(vMap.get(key));
+            }
+            tris.push(idx);
+        }
+        return {verts, tris};
+    };
+
+    const buildMeshXml = (verts, tris) => {
+        let v = '';
+        for (let i = 0; i < verts.length; i++)
+            v += '<vertex x="' + verts[i].x.toFixed(4) + '" y="' + verts[i].y.toFixed(4) + '" z="' + verts[i].z.toFixed(4) + '" />\n';
+        let t = '';
+        for (let i = 0; i < tris.length; i++)
+            t += '<triangle v1="' + tris[i][0] + '" v2="' + tris[i][1] + '" v3="' + tris[i][2] + '" />\n';
+        return '<mesh>\n<vertices>\n' + v + '</vertices>\n<triangles>\n' + t + '</triangles>\n</mesh>\n';
+    };
+
+    const bodyMeshes = [], glyphMeshes = [];
+    grp.traverse(c => {
+        if (!c.isMesh) return;
+        if (c.name === 'PlaqueBody') bodyMeshes.push(c);
+        else if (c.name === 'PlaqueContent') glyphMeshes.push(c);
+    });
+
+    const mergeGeos = (meshes) => {
+        const allV = [], allT = [];
+        meshes.forEach(m => {
+            const g = extractGeo(m);
+            const offset = allV.length;
+            g.verts.forEach(v => allV.push(v));
+            g.tris.forEach(tri => allT.push([tri[0]+offset, tri[1]+offset, tri[2]+offset]));
+        });
+        return {verts: allV, tris: allT};
+    };
+
+    const bodyGeo = bodyMeshes.length ? mergeGeos(bodyMeshes) : null;
+    const glyphGeo = glyphMeshes.length ? mergeGeos(glyphMeshes) : null;
+    if (!bodyGeo && !glyphGeo) return;
+
+    const safeName = getSanitizedName();
+    let objectsXml = '';
+    let buildXml = '';
+    let nextId = 1;
+
+    if (bodyGeo) {
+        const id = nextId++;
+        objectsXml += '<object id="' + id + '" type="model" name="Sign_Base">\n' + buildMeshXml(bodyGeo.verts, bodyGeo.tris) + '</object>\n';
+        buildXml += '<item objectid="' + id + '" />\n';
+    }
+    if (glyphGeo) {
+        const id = nextId++;
+        objectsXml += '<object id="' + id + '" type="model" name="Sign_Text">\n' + buildMeshXml(glyphGeo.verts, glyphGeo.tris) + '</object>\n';
+        buildXml += '<item objectid="' + id + '" />\n';
+    }
+
+    const modelXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<model unit="millimeter" xml:lang="en-US" xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02">\n' +
+        '<resources>\n' + objectsXml + '</resources>\n' +
+        '<build>\n' + buildXml + '</build>\n' +
+        '</model>';
+
+    zip.file('3D/3dmodel.model', modelXml);
+    zip.file('_rels/.rels',
+        '<?xml version="1.0" encoding="UTF-8"?>' +
+        '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+        '<Relationship Target="/3D/3dmodel.model" Id="rel0" Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel" />' +
+        '</Relationships>');
+    zip.file('[Content_Types].xml',
+        '<?xml version="1.0" encoding="UTF-8"?>' +
+        '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">' +
+        '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />' +
+        '<Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml" />' +
+        '</Types>');
+
+    const blob = await zip.generateAsync({type: 'blob'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = safeName + '.3mf';
+    a.click();
+}
+
+function setV(v){if(v==='f'){orb.th=0;orb.ph=Math.PI/2}else if(v==='t'){orb.th=0;orb.ph=.15}else if(v==='q'){orb.th=Math.PI*.25;orb.ph=Math.PI/3.2}else if(v==='s'){orb.th=Math.PI/2;orb.ph=Math.PI/2}upC()}
+function scheduleRebuild(){clearTimeout(rbt);rbt=setTimeout(rebuild,50)}
+
+document.getElementById('shG').innerHTML=SHP.map((s,i)=>`<button class="sb${i?'':' a'}" data-sh="${s.id}" onclick="[].forEach.call(document.querySelectorAll('.sb'),b=>b.classList.remove('a'));this.classList.add('a');scheduleRebuild()"><svg viewBox="0 0 40 24">${s.s}</svg><span>${s.l}</span></button>`).join('');
+window.addEventListener('load',()=>{initThree();loadFont();});
+</script></body></html>
